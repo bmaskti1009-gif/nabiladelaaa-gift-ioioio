@@ -1,52 +1,87 @@
 body {
-    background-color: #ffeef2;
+    background-color: #ffdeeb; /* Background pink muda */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Font lucu */
     overflow: hidden;
+    color: #444; /* Warna teks standar */
 }
 
 .container {
     text-align: center;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: #ffe3f0; /* Kotak card juga pink, tapi sedikit beda */
+    padding: 40px;
+    border-radius: 25px; /* Lebih rounded */
+    box-shadow: 0 12px 30px rgba(255, 77, 109, 0.3); /* Bayangan pink yang lebih tebal */
+    width: 85%; /* Lebih lebar */
+    max-width: 450px;
+    border: 3px solid #ffafbd; /* Border pink lebih gelap */
 }
 
-img {
-    width: 200px;
+.page img {
+    width: 130px; /* Ukuran GIF lebih kecil */
+    height: auto;
+    border-radius: 50%; /* GIF berbentuk bulat */
+    border: 4px solid #ff8fab; /* Border pink di sekitar GIF */
     margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 h1 {
-    color: #ff4d6d;
+    color: #e91e63; /* Pink gelap untuk judul */
+    font-size: 2.2rem; /* Judul lebih besar */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.7); /* Efek teks timbul */
 }
 
-.buttons {
-    margin-top: 20px;
+p {
+    color: #666;
+    line-height: 1.8; /* Jarak antar baris lebih lebar */
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    background-color: #ff69b4; /* Pink cerah untuk tombol */
+    color: white;
     border: none;
-    border-radius: 10px;
+    padding: 14px 30px; /* Tombol lebih besar */
+    border-radius: 30px; /* Tombol sangat rounded */
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    margin: 0 10px 15px 10px; /* Jarak antar tombol */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-transform: uppercase; /* Teks tombol jadi kapital semua */
 }
 
-#yesBtn {
-    background-color: #ff4d6d;
-    color: white;
-    margin-right: 10px;
+button:hover {
+    background-color: #e91e63; /* Pink lebih gelap saat hover */
+    transform: translateY(-3px) scale(1.05); /* Efek "meloncat" saat di-hover */
 }
 
 #noBtn {
-    background-color: #ccc;
-    color: #333;
-    position: absolute; /* Penting untuk efek lari */
+    background-color: #f7a8c1; /* Tombol No pink yang lebih kalem */
+    color: #444; /* Warna teks tombol No */
+    position: absolute;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#noBtn:hover {
+    background-color: #ffdeeb; /* Warna lebih muda saat hover */
+}
+
+/* CSS untuk Hujan Hati */
+@keyframes fall {
+    to { transform: translateY(110vh) scale(0.5); opacity: 0; }
+}
+.heart-fall {
+    animation: fall 5s linear forwards;
+    position: absolute;
+    pointer-events: none; /* Agar tidak menghalangi klik */
+    z-index: 1000; /* Pastikan di atas semua elemen */
 }

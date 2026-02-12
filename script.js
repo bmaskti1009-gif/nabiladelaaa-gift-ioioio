@@ -1,28 +1,32 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const question = document.getElementById("question");
-const gif = document.getElementById("gif-display");
-const music = document.getElementById("bgMusic");
+// Fungsi Pindah Halaman
+function nextPage(pageNum) {
+    // Sembunyikan semua halaman
+    document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+    });
+    // Tampilkan halaman yang dituju
+    document.getElementById('page' + pageNum).style.display = 'block';
+}
 
-// Fungsi supaya tombol No lari
+// Logika Tombol No Lari
+const noBtn = document.getElementById("noBtn");
 noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-    
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
 });
 
-// Fungsi saat tombol Yes diklik
+// Logika Tombol Yes
+const yesBtn = document.getElementById("yesBtn");
 yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Yeay! I Love You! 🌹✨";
-    gif.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHpueGZ3eXp4eXp4eXp4eXp4eXp4eXp4eXp4eXp4eXp4eXp4&ep=v1_gifs_search&rid=giphy.gif&ct=g"; // Ganti dengan GIF senang
-    music.play(); // Putar lagu
+    nextPage(4); // Pindah ke halaman konfirmasi
     
-    // Sembunyikan tombol No
-    noBtn.style.display = "none";
+    // Mulai Putar Musik YouTube (butuh interaksi klik)
+    const iframe = document.getElementById("youtube-audio");
+    iframe.src += "&autoplay=1";
     
-    // Efek Konfeti/Hati Sederhana
+    // Hujan Hati
     setInterval(createHeart, 300);
 });
 
@@ -31,13 +35,17 @@ function createHeart() {
     heart.innerHTML = "❤️";
     heart.style.position = "absolute";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    heart.style.top = "-5vh";
     heart.style.fontSize = Math.random() * 20 + 10 + "px";
-    heart.style.opacity = Math.random();
-    heart.classList.add("heart-fall");
+    heart.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
     document.body.appendChild(heart);
-    
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
+    setTimeout(() => heart.remove(), 5000);
 }
+
+// Tambahkan animasi jatuh di CSS lewat JS
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}`;
+document.head.appendChild(style);

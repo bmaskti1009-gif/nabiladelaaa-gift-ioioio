@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
+    <title>Totally Pink Valentine! 💖</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div id="main-card">
-            <img id="gif-display" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZ3eXp4eXp4eXp4eXp4eXp4eXp4eXp4eXp4eXp4eXp4&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Cute Bear">
-            <h1 id="question">Mau jadi Valentine-ku? 💖</h1>
-            
+        <div id="page1" class="page">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmN2MTU5cXR6OWZoeGgyaDR6OHk4ZzV5cG9rNHJmM2U1ZGJ3d2JkNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZnRfYnlfaWQmY3Q9Zw/kEKcZKqZf6xZS/giphy.gif" alt="Cute Pink Bear">
+            <h1>Haloo Ka Dell... ✨</h1>
+            <p>Gue punya sesuatu yang spesial banget pake telor tiga biji, coba klik di bawah!</p>
+            <button onclick="nextPage(2)">Apa itu? 🤔</button>
+        </div>
+
+        <div id="page2" class="page" style="display:none;">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnJ2azQwdjNmdjVxM2Q4N2k1dWZlMm9scWFnY29nNjN1eDdxZXBvNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZnRfYnlfaWQmY3Q9Zw/lqSDxNdyF49kY/giphy.gif" alt="Thinking Love">
+            <h1>Kenapa si...</h1>
+            <p>Hati lu susah banget cairnya, padahal if we never try how we will know gaksi ka?!</p>
+            <button onclick="nextPage(3)">Terus? 💖</button>
+        </div>
+
+        <div id="page3" class="page" style="display:none;">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3h2NXZuYjhpYTR2N2xldHJvczFqcDcxNWQxNHk3c2N3bTM1eXkydyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZnRfYnlfaWQmY3Q9Zw/LvtKS6L2cWbQY/giphy.gif" alt="Will you be my valentine?">
+            <h1>Will You Be My Valentine Date?(walaupun valentine sebenernya bukan budaya kita si)</h1>
+            <p>Sabtu sore nanti, mau nggak kita jalan? Nonton film favorit atau sekadar ngopi lucu?</p>
             <div class="buttons">
-                <button id="yesBtn">MAU! 😍</button>
-                <button id="noBtn">Enggak 😜</button>
+                <button id="yesBtn">MAU BANGET! 😍</button>
+                <button id="noBtn">Enggak dulu 😜</button>
             </div>
+        </div>
+
+        <div id="page4" class="page" style="display:none;">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHlxd2Rjcm5wcmQyMHV1eWdweTM3YzE4ZnIydjB6dmhldzNvZGVmciZlcD12MV9pbnRlcm5hbF9naWZzX2dpZnRfYnlfaWQmY3Q9Zw/R6L80YcE1K5xS/giphy.gif" alt="Happy couple">
+            <h1>Yeeaaay! See u! 🌹</h1>
+            <p>Nanti gue kontak lagi ya buat detailnya. Siap-siap dandan yang paling cakep & lucu yee!</p>
         </div>
     </div>
 
-    <audio id="bgMusic" loop>
-        <source src="https://www.youtube.com/watch?v=Vie_vNndJFA&list=RDVie_vNndJFA&start_radio=1" type="audio/mpeg">
-    </audio>
+    <div style="display:none">
+        <iframe id="youtube-audio" width="0" height="0" src="https://www.youtube.com/watch?v=Vie_vNndJFA&list=RDVie_vNndJFA&start_radio=1" frameborder="0" allow="autoplay"></iframe>
+    </div>
 
     <script src="script.js"></script>
 </body>
